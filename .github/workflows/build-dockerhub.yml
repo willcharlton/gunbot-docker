@@ -1,8 +1,9 @@
 name: Publish Docker Image To DockerHub
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - master
 
 jobs:
   push_to_registry:

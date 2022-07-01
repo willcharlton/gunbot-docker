@@ -38,7 +38,8 @@ http://localhost:5000
 - Build the container from the repository.
 
 ```bash
-GUNBOT_VERSION=v24.3.2 docker \
+export GUNBOT_VERSION=v24.3.2 && \
+docker \
     build \
     --build-arg GUNBOT_VERSION="${GUNBOT_VERSION}" \
     -t gunbot:"${GUNBOT_VERSION}" .
