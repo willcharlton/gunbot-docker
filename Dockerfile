@@ -1,21 +1,27 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y unzip wget && apt-get clean
+RUN apt-get update && \
+    apt-get install -y \
+    unzip wget && \
+    apt-get clean
 
-ARG GUNBOT_VERSION=11b906
+ARG GUNBOT_VERSION
 ENV GUNBOT_VERSION ${GUNBOT_VERSION}
 
-RUN mkdir -p /app
-WORKDIR /app
+RUN mkdir -p /gunbot
+WORKDIR /gunbot
 
 COPY install.sh .
 
-RUN ./install.sh
+RUN ./install.sh ${GUNBOT_VERSION}
 
-WORKDIR /app/gunbot
+RUN unzip -o gunthy_linux.zip
+RUN chmod +x gunthy_linux/gunthy-linux
 
-VOLUME /app/gunbot/
+WORKDIR /gunbot/gunthy_linux
 
-CMD ./gunthy-linx64
+VOLUME /gunbot/gunthy_linux
+
+CMD ./gunthy-linux
 
 EXPOSE 5000

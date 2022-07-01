@@ -38,7 +38,10 @@ http://localhost:5000
 - Build the container from the repository.
 
 ```bash
-docker build -t gunbot .
+GUNBOT_VERSION=v24.3.2 docker \
+    build \
+    --build-arg GUNBOT_VERSION="${GUNBOT_VERSION}" \
+    -t gunbot:"${GUNBOT_VERSION}" .
 ```
 
 - To build with a specific gunbot version from version v10 and later. Just change the gunbot version to the version you want. To see which versions are available go to `https://github.com/GuntharDeNiro/BTCT/releases`

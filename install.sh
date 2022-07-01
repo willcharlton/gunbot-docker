@@ -1,12 +1,14 @@
 #!/bin/bash
 
+export GUNBOT_VERSION="$1"
+
 function get_download_version {
-echo $GUNBOT_VERSION | tr -d .
+    python3 -c "import os ; print( os.environ['GUNBOT_VERSION'].replace('v','').replace('.','') )" 
 }
 
-DOWNLOAD_VERSION=$(get_download_version)
+URL="https://github.com/GuntharDeNiro/BTCT/releases/download/$(get_download_version)/gunthy_linux.zip"
+echo "Downloading: $URL"
 
-wget https://github.com/GuntharDeNiro/BTCT/releases/download/v$DOWNLOAD_VERSION/lin.zip
-unzip lin.zip
-mv lin gunbot
-chmod +x gunbot/gunthy-linx64
+wget $URL
+unzip gunthy_linux.zip
+chmod +x gunthy_linux/gunthy-linux
