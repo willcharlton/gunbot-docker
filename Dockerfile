@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 RUN apt-get update && \
     apt-get install -y \
-    unzip wget && \
+    unzip wget curl jq && \
     apt-get clean
 
 # ARG GUNBOT_VERSION
