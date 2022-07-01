@@ -6,7 +6,7 @@ function get_download_version {
     python3 -c "import os ; print( os.environ['GUNBOT_VERSION'].replace('v','').replace('.','') )" 
 }
 
-URL="https://github.com/GuntharDeNiro/BTCT/releases/download/$(get_download_version)/gunthy_linux.zip"
+URL="https://github.com/GuntharDeNiro/BTCT/releases/download/${GUNBOT_VERSION}/gunthy_linux.zip"
 echo "Downloading: $URL"
 
 wget $URL
