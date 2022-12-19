@@ -22,7 +22,7 @@ Compatible with Gunbot version : v11.7.6
 - To Run Container
 
 ```bash
-docker run -d -p 5000:5000 jakkie/gunbot-xt-edition-docker
+make run
 ```
 
 - After gunbot is running browse to the url example http://your-ip:5000
@@ -38,11 +38,8 @@ http://localhost:5000
 - Build the container from the repository.
 
 ```bash
-export GUNBOT_VERSION=v24.3.2 && \
-docker \
-    build \
-    --build-arg GUNBOT_VERSION="${GUNBOT_VERSION}" \
-    -t gunbot:"${GUNBOT_VERSION}" .
+export GUNBOT_VERSION=v24.3.2
+make build
 ```
 
 - To build with a specific gunbot version from version v10 and later. Just change the gunbot version to the version you want. To see which versions are available go to `https://github.com/GuntharDeNiro/BTCT/releases`
