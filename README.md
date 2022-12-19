@@ -56,6 +56,6 @@ docker-compose up -d
 Provisioning gunbot on an Unraid system invloves using the files `unraid-container-config.xml` and `unraid-container-command.sh` to configure a Docker Application on your Unraid server. Before installing the app, run the following commands or their equivalents to make sure Gunbot has a valid config file or else it will crash. 
 
 ```
-ssh root@<unraid-server> "mkdir -p mnt/user/appdata/gunbot/gunthy_linux/"
+ssh root@<unraid-server> "mkdir -p /mnt/user/appdata/gunbot/gunthy_linux/"
 scp gunthy_linux/config.js root@<unraid-server>:/mnt/user/appdata/gunbot/gunthy_linux/config.js
 ```
