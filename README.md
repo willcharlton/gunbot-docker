@@ -42,20 +42,6 @@ export GUNBOT_VERSION=v24.3.2
 make build
 ```
 
-- To build with a specific gunbot version from version v10 and later. Just change the gunbot version to the version you want. To see which versions are available go to `https://github.com/GuntharDeNiro/BTCT/releases`
-
-```bash
-docker build -t gunbot --build-arg gunbot_version=11b906 .
-```
-
-### Running the container
-
-- To run a instance of gunbot.
-
-```bash
-docker run -d -p 5000:5000 --name gb gunbot
-```
-
 ### Running the gunbot container with docker-compose
 
 - To install docker compose see `https://docs.docker.com/compose/install/`
@@ -65,16 +51,11 @@ docker run -d -p 5000:5000 --name gb gunbot
 docker-compose up -d
 ```
 
-Donations are also very welcomed and appreciated:
+### Unraid
 
-BTC: 1JvpPGe22ViBYNiNrA3nwtg71Jta5vqXAi
+Provisioning gunbot on an Unraid system invloves using the files `unraid-container-config.xml` and `unraid-container-command.sh` to configure a Docker Application on your Unraid server. Before installing the app, run the following commands or their equivalents to make sure Gunbot has a valid config file or else it will crash. 
 
-BCH: qzndnssc368k5h5ndg6h2d5pewmkycd50c9gxcpre6
-
-LTC: LWRDbKva26cATarA2PoTXTpKVJwCRCzbNC
-
-ETH: 0x13346b1DcF1f923bD357a1C8900C4475342e5255
-
-ZEC: t1YgFzgYdRymwJcwTBaS1harBf1sPakgbZ4
-
-DASH: XanACebtJkEZsfRaMahbnqCU4LPt42e3mE
+```
+ssh root@<unraid-server> "mkdir -p mnt/user/appdata/gunbot/gunthy_linux/"
+scp gunthy_linux/config.js root@<unraid-server>:/mnt/user/appdata/gunbot/gunthy_linux/config.js
+```
