@@ -2,7 +2,10 @@ FROM ubuntu:latest
 
 RUN apt-get update && \
     apt-get install -y \
-    unzip wget curl jq && \
+        unzip \
+        wget \
+        curl \
+        jq && \
     apt-get clean
 
 # ARG GUNBOT_VERSION
@@ -15,12 +18,7 @@ COPY install.sh .
 
 RUN ./install.sh
 
-RUN unzip -o gunthy_linux.zip
-RUN chmod +x gunthy_linux/gunthy-linux
-
 WORKDIR /gunbot/gunthy_linux
-
-VOLUME /gunbot/gunthy_linux
 
 CMD ./gunthy-linux
 

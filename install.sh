@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 export GUNBOT_VERSION="$1"
 
 function get_download_version {
