@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Gunbot</Name>
+  <Repository>192.168.1.12:5000/gunbot</Repository>
+  <Registry>192.168.1.25:5000/gunbot:latest</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>TODO</Support>
+  <Project>TODO</Project>
+  <Overview>TODO</Overview>
+  <Category>Crypto:</Category>
+  <WebUI>http://[IP]:[PORT:5001]/</WebUI>
+  <TemplateURL/>
+  <Icon>TODO</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1671413783</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>TODO</Requires>
+  <Config Name="WEBUI_PORT" Target="5000" Default="5001" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">5001</Config>
+  <Config Name="config.js" Target="/gunbot/gunthy_linux/config.js" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gunbot/gunthy_linux/config.js</Config>
+  <Config Name="json" Target="/gunbot/gunthy_linux/json" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gunbot/gunthy_linux/json</Config>
+  <Config Name="backups" Target="/gunbot/gunthy_linux/backups" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gunbot/gunthy_linux/backups</Config>
+  <Config Name="logs" Target="/gunbot/gunthy_linux/logs" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gunbot/gunthy_linux/logs</Config>
+</Container>
